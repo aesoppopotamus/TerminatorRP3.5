@@ -3,16 +3,62 @@ GM.MOTDURL			= ""
 GM.SteamGroupURL	= ""
 GM.WebsiteURL		= "http://taconbanana.com"
 
-GM.Developers = {}
+GM.Developers = {
+	"STEAM_0:0:17901650", -- aesop
+}
 
 -- Security
-GM.PrivateMode = true
+GM.PrivateMode = false
 
 GM.PrivateSteamIDs = {}
 
 GM.TestingClosedMessage = "This server is closed for testing. You are not whitelisted."
 
 GM.WorkshopAddons = {
+	-- LFS
+	"1131455085", -- Gredwitch's Base
+	"1703878123", -- Merydian's LFS stuff
+	"1571918906", -- [LFS] - Planes
+	"1581181120", -- [LFS] A-10 Thunderbolt II
+	"1639815030", -- [LFS] AH-6 Littlebird
+	"1690026591", -- [LFS] BF3 Fighter jets
+	"1716592162", -- [LFS] BF4 Attack helicopters
+	"1765887842", -- [LFS] Boeing AH-64D Apache
+	"1963415568", -- [LFS] CH-47 Chinook
+	"1726056130", -- [LFS] Mil Mi-24D "Hind D"
+	"1652497244", -- [LFS] UH-1H
+
+	-- Simfphys
+	"771487490", -- [simfphys] LUA Vehicles - Base
+	"831680603", -- [simfphys] armed vehicles
+
+	-- Dave stuff
+	"1153863627", -- Tekka Sound
+	"1442148868", -- TnB Explosives
+	"646312597", -- TnB Map Content and Props
+	"760239128", -- TnB Map Textures
+	"1269749234", -- TnB Terminator RP Music
+	"760237654", -- TnB Weapon Textures
+	"760240464", -- TnB Weapons - Assault Rifles and Machineguns
+	"760241310", -- TnB Weapons - SMGs, Shotguns, Pistols, Sniper Rifles, Melee
+
+	-- Deadeye stuff
+	"2611791235", -- TnB Head Models - Revised
+	"2617473738", -- TnB Clothing Models - Revised
+	"2617483552", -- TnB Model Materials - Revised
+	"2619705036", -- TnB Skynet Models - Revised
+	"2630707586", -- TnB TRP Weapons - Revised
+	"2498025666", -- TRP Extras
+	"2505896097", -- HLNA Extras
+
+	-- Misc
+	"2625223316", -- TESTBED
+	"1525218777", -- vFire - Dynamic Fire for Garry's Mod
+	"2447774443", -- StormFox 2
+	"430077474", -- ZONA Stalker Props Pack [1/4] [Base]
+	"430106735", -- ZONA Stalker Props Pack [2/4]
+	"430147227", -- ZONA Stalker Props Pack [3/4]
+	"430453978", -- ZONA Stalker Props Pack [4/4]
 }
 
 GM.WorkshopMaps = {} -- Should not be needed, maps are automatically made available for download if mounted from the workshop collection
@@ -100,7 +146,7 @@ GM.CraftRange 				= 96
 GM.MaxItemDescLength 		= 300
 
 -- AFK Autokicker
-GM.AFKKickerEnabled			= true
+GM.AFKKickerEnabled			= false
 GM.AFKPercentage			= 0.90
 GM.AFKTime					= 600
 
