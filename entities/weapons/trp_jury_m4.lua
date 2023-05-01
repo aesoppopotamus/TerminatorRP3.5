@@ -46,7 +46,7 @@ SWEP.RecoilKick 		= 1
 
 SWEP.FireSound 			= "Terminator_Plasma.JuryRigged.M4"
 SWEP.Tracer 			= "trp_laser"
-SWEP.LaserColor 		= Color(255, 100, 100) * 127
+SWEP.LaserColor 		= Color(255, 100, 100)
 
 SWEP.BaseOffsets = {
 	Default = {
