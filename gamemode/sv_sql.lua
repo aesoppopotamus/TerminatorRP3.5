@@ -333,7 +333,7 @@ function meta:SQLSaveNewPlayer()
 
 	GAMEMODE:LogSQL("Creating new player record for user " .. self:Nick() .. "...")
 
-	GAMEMODE.SQL:Insert("$players", {SteamID = self:SteamID()}, cb)
+	GAMEMODE.SQL:Insert("$players", {SteamID = self:SteamID() DroneFlags = ''}, cb)
 end
 
 function meta:PostLoadCharsInfo()
