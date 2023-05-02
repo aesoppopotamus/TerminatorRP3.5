@@ -243,13 +243,14 @@ function GM:PlayerSpawn(ply)
 	end
 
 	if ply:IsBot() then
-		if not ply.CharCreateCompleted then
-			ply:LoadCharacter(player.GetAll()[1].SQLCharData[1])
+		local firstPlayer = player.GetAll()[1]
+		if firstPlayer and firstPlayer.SQLCharData and not ply.CharCreateCompleted then
+			ply:LoadCharacter(firstPlayer.SQLCharData[1])
 		end
-
+	
 		self:PlayerCheckFlag(ply)
 		self:PlayerCheckInventory(ply)
-
+	
 		return
 	end
 
