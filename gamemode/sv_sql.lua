@@ -125,7 +125,7 @@ GM.SQLTables.players = {
 	["LastNotesUpdate"] 	= {Type = "INT", 			Default = "0"},
 	["IsOOCMuted"] 			= {Type = "INT", 			Default = "0"},
 	["IsTravelBanned"] 		= {Type = "INT", 			Default = "0"},
-	["Donations"] 			= {Type = "TEXT"			Default = "''"},
+	["Donations"] 			= {Type = "TEXT",			Default = "''"},
 	["PhysgunMode"] 		= {Type = "INT", 			Default = "0"},
 	["DroneFlags"] 			= {Type = "TEXT",			Default = "''"},
 	["ActiveDroneFlag"] 	= {Type = "VARCHAR(128)",   Default = ""},
