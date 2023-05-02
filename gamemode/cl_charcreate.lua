@@ -210,88 +210,25 @@ local matHover = Material("vgui/spawnmenu/hover")
 
 local allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 .-'áàâäçéèêëíìîïóòôöúùûüÿÁÀÂÄßÇÉÈÊËÍÌÎÏÓÒÔÖÚÙÛÜŸ"
 
-function GM:CreateCharCreate()
-	CCP.CharCreatePanel = vgui.Create("DFrame")
-	CCP.CharCreatePanel:SetSize(800, 500)
-	if self.CCMode == CC_CREATE then
-		CCP.CharCreatePanel:Center()
-	else
-		CCP.CharCreatePanel:SetPos(ScrW() / 2 - 800 / 2 - 100, ScrH() / 2 - 500 / 2)
-	end
-	CCP.CharCreatePanel:SetTitle("Character Creation")
-	CCP.CharCreatePanel:ShowCloseButton(false)
-	CCP.CharCreatePanel:SetDraggable(false)
-	CCP.CharCreatePanel.lblTitle:SetFont("CombineControl.Window")
-	CCP.CharCreatePanel:MakePopup()
+function createLabel(parent, text, x, y, font)
+    local label = vgui.Create("DLabel", parent)
+    label:SetText(text)
+    label:SetPos(x, y)
+    label:SetFont(font)
+    label:SizeToContents()
+    label:PerformLayout()
+    return label
+end
 
-	CCP.CharCreatePanel.NameLabel = vgui.Create("DLabel", CCP.CharCreatePanel)
-	CCP.CharCreatePanel.NameLabel:SetText("Name")
-	CCP.CharCreatePanel.NameLabel:SetPos(10, 30)
-	CCP.CharCreatePanel.NameLabel:SetFont("CombineControl.LabelGiant")
-	CCP.CharCreatePanel.NameLabel:SizeToContents()
-	CCP.CharCreatePanel.NameLabel:PerformLayout()
-
-	CCP.CharCreatePanel.NameEntry = vgui.Create("DTextEntry", CCP.CharCreatePanel)
-	CCP.CharCreatePanel.NameEntry:SetFont("CombineControl.LabelBig")
-	CCP.CharCreatePanel.NameEntry:SetPos(150, 30)
-	CCP.CharCreatePanel.NameEntry:SetSize(300, 20)
-	CCP.CharCreatePanel.NameEntry:PerformLayout()
-	function CCP.CharCreatePanel.NameEntry:AllowInput(val)
-
-		if not string.find(allowedChars, val, 1, true) then
-
-			return true
-
-		end
-
-		return false
-
-	end
-
-	CCP.CharCreatePanel.RandomMale = vgui.Create("DButton", CCP.CharCreatePanel)
-	CCP.CharCreatePanel.RandomMale:SetFont("CombineControl.LabelSmall")
-	CCP.CharCreatePanel.RandomMale:SetText("Random Male")
-	CCP.CharCreatePanel.RandomMale:SetPos(150, 60)
-	CCP.CharCreatePanel.RandomMale:SetSize(100, 20)
-	function CCP.CharCreatePanel.RandomMale:DoClick()
-
-		CCP.CharCreatePanel.NameEntry:SetValue(table.Random(GAMEMODE.MaleFirstNames) .. " " .. table.Random(GAMEMODE.LastNames))
-
-	end
-	CCP.CharCreatePanel.RandomMale:PerformLayout()
-
-	CCP.CharCreatePanel.RandomFemale = vgui.Create("DButton", CCP.CharCreatePanel)
-	CCP.CharCreatePanel.RandomFemale:SetFont("CombineControl.LabelSmall")
-	CCP.CharCreatePanel.RandomFemale:SetText("Random Female")
-	CCP.CharCreatePanel.RandomFemale:SetPos(260, 60)
-	CCP.CharCreatePanel.RandomFemale:SetSize(100, 20)
-	function CCP.CharCreatePanel.RandomFemale:DoClick()
-
-		CCP.CharCreatePanel.NameEntry:SetValue(table.Random(GAMEMODE.FemaleFirstNames) .. " " .. table.Random(GAMEMODE.LastNames))
-
-	end
-	CCP.CharCreatePanel.RandomFemale:PerformLayout()
-
-	CCP.CharCreatePanel.DescLabel = vgui.Create("DLabel", CCP.CharCreatePanel)
-	CCP.CharCreatePanel.DescLabel:SetText("Description")
-	CCP.CharCreatePanel.DescLabel:SetPos(10, 90)
-	CCP.CharCreatePanel.DescLabel:SetFont("CombineControl.LabelGiant")
-	CCP.CharCreatePanel.DescLabel:SizeToContents()
-	CCP.CharCreatePanel.DescLabel:PerformLayout()
-
-	CCP.CharCreatePanel.DescEntry = vgui.Create("DTextEntry", CCP.CharCreatePanel)
-	CCP.CharCreatePanel.DescEntry:SetFont("CombineControl.LabelSmall")
-	CCP.CharCreatePanel.DescEntry:SetPos(150, 90)
-	CCP.CharCreatePanel.DescEntry:SetSize(300, 200)
-	CCP.CharCreatePanel.DescEntry:SetMultiline(true)
-	CCP.CharCreatePanel.DescEntry:PerformLayout()
-
-	CCP.CharCreatePanel.ModelLabel = vgui.Create("DLabel", CCP.CharCreatePanel)
-	CCP.CharCreatePanel.ModelLabel:SetText("Model")
-	CCP.CharCreatePanel.ModelLabel:SetPos(10, 300)
-	CCP.CharCreatePanel.ModelLabel:SetFont("CombineControl.LabelGiant")
-	CCP.CharCreatePanel.ModelLabel:SizeToContents()
-	CCP.CharCreatePanel.ModelLabel:PerformLayout()
+function createTextEntry(parent, x, y, width, height, multiline, font)
+    local entry = vgui.Create("DTextEntry", parent)
+    entry:SetFont(font)
+    entry:SetPos(x, y)
+    entry:SetSize(width, height)
+    entry:SetMultiline(multiline)
+    entry:PerformLayout()
+    return entry
+end
 
 	-- TEMPORARY BREACH OF STYLE BECAUSE FUCK THIS
 	function CreateCharacterModelPickerPanel()
