@@ -18,7 +18,7 @@ GM.WorkshopAddons = {
 	-- LFS
 	"1131455085", -- Gredwitch's Base
 	"1703878123", -- Merydian's LFS stuff
-	"1571918906", -- [LFS] - Planes
+	"2966479594", -- [LFS] - Planes
 	"1581181120", -- [LFS] A-10 Thunderbolt II
 	"1639815030", -- [LFS] AH-6 Littlebird
 	"1690026591", -- [LFS] BF3 Fighter jets
