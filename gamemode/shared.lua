@@ -2,10 +2,10 @@
 
 DeriveGamemode("sandbox")
 
-GM.Name = "TerminatorRP"
+GM.Name = "Terminator | Serious Roleplay"
 GM.Author = "Disseminate, Gangleider, Steve, Hoplite, Thor, TankNut, DaveBrown"
 GM.Website = "http://taconbanana.com"
-GM.Email = "gangleider@taconbanana.com"
+GM.Email = ""
 
 function GM:GetGameDescription()
 	return self.Name
