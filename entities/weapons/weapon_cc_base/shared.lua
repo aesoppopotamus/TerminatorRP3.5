@@ -245,6 +245,7 @@ end
 function SWEP:DoDrawAnim()
 	if self.DrawAnim then
 		local vm = self.Owner:GetViewModel()
+		if IsValid(vm) then
 		vm:SetNoDraw(false)
 
 		if type(self.DrawAnim) == "string" then
